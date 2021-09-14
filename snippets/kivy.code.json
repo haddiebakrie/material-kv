@@ -1,0 +1,74 @@
+{
+    "Widget's Size hint": {
+        "prefix": "size_hint",
+        "body": [
+            "size_hint: ${1|None,1|}, ${2|None,1|}"
+        ]
+    },
+    "BoxLayout Orientation": {
+        "prefix": "orientation",
+        "body": [
+            "orientation: ${1|'vertical','horizontal'|}"
+        ]
+    },
+    "Widget's Interaction": {
+        "prefix": "disabled",
+        "body": [
+            "disabled: ${1|'True','False'|}"
+        ]
+    },
+    "Widget's Heigt": {
+        "prefix": "height",
+        "body": [
+            "height: ${1|dp(1),dp(2),dp(3),dp(4),dp(5),dp(6),dp(7),dp(8),dp(9),dp(10),dp(20),dp(30),dp(40),dp(50)dp(60),dp(70),dp(80),dp(90),dp(100)|}"
+        ]
+    },
+    "Widget's Opacity": {
+        "prefix": "opacity",
+        "body": [
+            "opacity: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's Pos hint": {
+        "prefix": "pos_hint",
+        "body": [
+            "pos_hint: {${1|\"center_x,right,x\"|}: ${2|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|},${3|\"center_y,top,y\"|}: ${4|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}}"
+        ]
+    },
+    "Widget's Right": {
+        "prefix": "right",
+        "body": [
+            "right: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's X": {
+        "prefix": "x",
+        "body": [
+            "x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's Top": {
+        "prefix": "top",
+        "body": [
+            "top: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's Y": {
+        "prefix": "y",
+        "body": [
+            "y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's Center Horizontally": {
+        "prefix": "center_x",
+        "body": [
+            "center_x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Widget's Center Vertically": {
+        "prefix": "center_y",
+        "body": [
+            "center_y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    }
+}

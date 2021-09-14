@@ -1,0 +1,66 @@
+{
+    "Kivy AnchorLayout": {
+        "prefix": "mkvanchor",
+        "body": [
+            "AnchorLayout:",
+            "\t$1"
+        ],
+        "description":"The AnchorLayout aligns its children to a border (top, bottom, left, right) or center."
+    },
+    "Kivy BoxLayout": {
+        "prefix": "mkvbox",
+        "body": [
+            "BoxLayout:",
+            "\t$1"
+        ],
+        "description":"BoxLayout arranges children in a vertical or horizontal box."
+    },
+    "Kivy FloatLayout": {
+        "prefix": "mkvfloat",
+        "body": [
+            "FloatLayout:",
+            "\t$1"
+        ],
+        "description":"FloatLayout honors the pos_hint and the size_hint properties of its children"
+    },
+    "Kivy GridLayout,": {
+        "prefix": "mkvgrid",
+        "body": [
+            "GridLayout:",
+            "\t$1"
+        ],
+        "description":"The GridLayout arranges children in a matrix. It takes the available space and divides it into columns and rows, then adds widgets to the resulting 'cells'. \n A GridLayout must always have at least one input constraint: GridLayout.cols or GridLayout. rows. If you do not specify cols or rows, the Layout will throw an exception."
+    },
+    "Kivy PageLayout": {
+        "prefix": "mkvpage",
+        "body": [
+            "PageLayout:",
+            "\t$1"
+        ],
+        "description": "The PageLayout class is used to create a simple multi-page layout, in a way that allows easy flipping from one page to another using borders \n PageLayout does not currently honor the size_hint, size_hint_min, size_hint_max, or pos_hint properties."
+    },
+    "Kivy RelativeLayout": {
+        "prefix": "mkvrelative",
+        "body": [
+            "RelativeLayout:",
+            "\t$1"
+        ],
+        "description": "The RelativeLayout class behaves just like the regular FloatLayout except that its child widgets are positioned relative to the layout. \n When a widget with position = (0,0) is added to a RelativeLayout, the child widget will also move when the position of the RelativeLayout is changed. The child widgets coordinates remain (0,0) as they are always relative to the parent layout"
+    },
+    "Kivy ScatterLayout": {
+        "prefix": "mkvscatter",
+        "body": [
+            "ScatterLayout:",
+            "\t$1"
+        ],
+        "description": "This layout behaves just like a RelativeLayout. When a widget is added with position = (0,0) to a ScatterLayout, the child widget will also move when you change the position of the ScatterLayout. The child widget’s coordinates remain (0,0) as they are relative to the parent layout."
+    },
+    "Kivy StackLayout": {
+        "prefix": "mkvstack",
+        "body": [
+            "StackLayout:",
+            "\t$1"
+        ],
+        "description": "The StackLayout arranges children vertically or horizontally, as many as the layout can fit. The size of the individual children widgets do not have to be uniform. "
+    }
+}

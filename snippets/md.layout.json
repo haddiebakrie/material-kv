@@ -1,0 +1,34 @@
+{
+    "KivyMD BoxLayout": {
+        "prefix": "mdbox",
+        "body": [
+            "MDBoxLayout:",
+            "\t$1"
+        ],
+        "description":"BoxLayout class equivalent. Simplifies working with some widget properties."
+    },
+    "KivyMD FloatLayout": {
+        "prefix": "mdfloat",
+        "body": [
+            "MDFloatLayout:",
+            "\t$1"
+        ],
+        "description":"FloatLayout class equivalent. Simplifies working with some widget properties."
+    },
+    "KivyMD GridLayout,": {
+        "prefix": "mdgrid",
+        "body": [
+            "MDGridLayout:",
+            "\t$1"
+        ],
+        "description":"GridLayout class equivalent. Simplifies working with some widget properties."
+    },
+    "KivyMD RelativeLayout": {
+        "prefix": "mdrelative",
+        "body": [
+            "MDRelativeLayout:",
+            "\t$1"
+        ],
+        "description":"RelativeLayout class equivalent. Simplifies working with some widget properties."
+    }
+}

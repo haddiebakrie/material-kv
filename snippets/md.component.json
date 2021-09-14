@@ -1,0 +1,142 @@
+{
+    "KivyMD Bottom Navigation Skeleton":{
+        "prefix": "mdbottomnav",
+        "body": [
+            "MDBottomNavigation:",
+            "",
+            "\t# Add a NavigationItem for each Navigation.",
+            "\tMDBottomNavigationItem:",
+            "\t\tname: \"${1:screen 1}\"",
+            "\t\ttext: \"${2:Home}\"",
+            "\t\ticon: \"${3:home}\"",
+            "",
+            "\t\t# Add Contents here",
+            "\t\t$0"
+        ]
+    },
+    "KivyMD Navigation Layout Skeleton":{
+        "prefix": "mdnavlayout",
+        "body": [
+            "MDNavigationLayout:",
+            "",
+            "\tScreenManager:",
+            "\t\tScreen:",
+            "\t\t\tname: \"${1:screen name}\"",
+            "",
+            "\t# Navigation Drawer Panel",
+            "\tMDNavigationDrawer:",
+            "\t\t# Add Navigation Drawer Panel Content here.",
+            "\t\t$0"
+        ]
+    },
+    "KivyMD Navigation Rail Skeleton":{
+        "prefix": "mdnavrail",
+        "body": [
+            "MDNavigationRail:",
+            "\tcolor_normal: get_color_from_hex(\"#344954\")",
+            "\tcolor_active: get_color_from_hex(\"#f3ab44\")",
+            "",
+            "\tMDNavigationRailItem:",
+            "\t\ttext: \"${1:Python}\"",
+            "\t\ticon: \"${2:language-python}\""
+        ]
+    },
+    "KivyMD Toolbar without Icon":{
+        "prefix": "mdtoolbar",
+        "body": [
+            "MDToolbar:",
+            "\ttitle: \"${1:Title}\""
+        ]
+    },
+    "KivyMD Toolbar with right Icon":{
+        "prefix": "mdtoolbar.right",
+        "body": [
+            "MDToolbar:",
+            "\ttitle: \"${1:Title}\"",
+            "\tright_action_items: [[\"${2:dots-vertical}\", lambda x: ${3:callback()}]]"
+        ]
+    },
+    "KivyMD Top Toolbar with left Icon":{
+        "prefix": "mdtoolbar.left",
+        "body": [
+            "MDToolbar:",
+            "\ttitle: \"${1:Title}\"",
+            "\tleft_action_items: [[\"${2:menu}\", lambda x: ${3:callback()}]]"
+            ]
+        },
+        "KivyMD Top Toolbar with left and right Icons":{
+            "prefix": "mdtoolbar.both",
+            "body": [
+                "MDToolbar:",
+                "\ttitle: \"${1:Title}\"",
+                "\tleft_action_items: [[\"${2:menu}\", lambda x: ${3:callback()}]]",
+                "\tright_action_items: [[\"${4:dots-vertical}\", lambda x: ${5:callback()}]]"
+        ]
+    },
+    "KivyMD Card Swipe Skeleton":{
+        "prefix": "mdcardswipe",
+        "body": [
+            "# To create a card with swipe-to-delete behavior",
+            "# You must create a new class that inherits from the MDCardSwipe class",
+            "${1:YourCardSwipeClass}:",
+            "\tMDCardSwipeLayerBox:",
+            "",
+            "\tMDCardSwipeFrontBox:",
+            "\t\t # Add card Contents here",
+            "\t\t$2"
+        ]
+    },
+    "Canvas Rectangle Instruction":{
+        "prefix": "canvas.rect",
+        "body": [
+            "canvas:",
+            "\tColor:",
+            "\t\trgba: [1, 0, 0, 1]",
+            "",
+            "\tRectangle:",
+            "\t\tsize: self.size[0], self.size[1]",
+            "\t\tpos: self.pos",
+            ""
+        ]
+    },
+    "Canvas Round Rectangle Instruction":{
+        "prefix": "canvas.roundrect",
+        "body": [
+            "canvas:",
+            "\tColor:",
+            "\t\trgba: [1, 0, 0, 1]",
+            "",
+            "\tRoundedRectangle:",
+            "\t\tsize: self.size[0], self.size[1]",
+            "\t\tpos: self.pos",
+            "\t\tradius: dp(20)",
+            ""
+        ]
+    },
+    "Canvas Ellipse Instruction":{
+        "prefix": "canvas.ellipse",
+        "body": [
+            "canvas:",
+            "\tColor:",
+            "\t\trgba: [1, 0, 0, 1]",
+            "",
+            "\tEllipse:",
+            "\t\tsize: self.size[0], self.size[1]",
+            "\t\tpos: self.pos",
+            ""
+        ]
+    },
+    "Canvas Line Instruction":{
+        "prefix": "canvas.line",
+        "body": [
+            "canvas:",
+            "\tColor:",
+            "\t\trgba: [1, 0, 0, 1]",
+            "",
+            "\tLine:",
+            "\t\tpoints: [10, 150, 20, 150, 30, 150]",
+            "\t\twidth: dp(2)",
+            ""
+        ]
+    }
+}

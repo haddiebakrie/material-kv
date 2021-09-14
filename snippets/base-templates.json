@@ -1,0 +1,96 @@
+{
+    "Widget Class Skeleton": {
+        "prefix": "mkvwidgetcls",
+        "body":[
+            "from kivy.lang.builder import Builder",
+            "",
+            "Builder.load_string(\"\"\"",
+            "",
+            "<${1:MyWidget}>:",
+            "\t",
+            "\"\"\")",
+            "",
+            "class ${1:MyWidget}($0):",
+            "\tpass"
+        ],
+        "description":"A custom widget class creation Template with Builder.load_string."
+    },
+    "Kivy App Starter": {
+        "prefix": "mkvapp.starter",
+        "body": [
+            "from kivy.app import App",
+            "",
+            "class ${1:MyApp}(App):",
+            "\tdef build(self):",
+            "\t\treturn ${2:}",
+            "",
+            "if __name__==\"__main__\":",
+            "\t${1:MyApp}().run()"
+        ]
+    },
+    "KivyMD App Starter": {
+        "prefix": "mdapp.starter",
+        "body": [
+            "from kivymd.app import MDApp",
+            "",
+            "class ${1:MyApp}(MDApp):",
+            "\tdef build(self):",
+            "\t\treturn ${2:}",
+            "",
+            "if __name__==\"__main__\":",
+            "\t${1:MyApp}().run()"
+        ]
+    },
+    "KivyMD App Template 1": {
+        "prefix": "mdapp.template.1",
+        "body": [
+            "from kivymd.app import MDApp",
+            "from kivy.uix.screenmanager import ScreenManager, Screen",
+            "",
+            "class WindowManager(ScreenManager):",
+            "\tpass",
+            "",
+            "class Home(Screen):",
+            "\tpass",
+            "",
+            "class ${1:MyApp}(MDApp):",
+            "",
+            "\tdef build(self):",
+            "",
+            "\t\t# Create a list of all screen, loop through it and add it to the screenmanager",
+            "\t\t# and return the screenmanager.",
+            "\t\tself.wm = WindowManager()",
+            "",
+            "\t\tscreens = [",
+            "\t\t\tHome(name=\"home\")",
+            "\t\t]",
+            "",
+            "\t\tfor screen in screens:",
+            "\t\t\tself.wm.add_widget(screen)",
+            "",
+            "\t\treturn self.wm",
+            "",
+            "if __name__==\"__main__\":",
+            "\t${1:MyApp}().run()"
+        ]
+    },
+    "KivyMD App Template 2": {
+        "prefix": "mdapp.template.2",
+        "body": [
+            "from kivymd.app import MDApp",
+            "from kivy.uix.screenmanager import Screen",
+            "",
+            "class Home(Screen):",
+            "\tpass",
+            "",
+            "class ${1:MyApp}(MDApp):",
+            "",
+            "\tdef build(self):",
+            "",
+            "\t\treturn Home()",
+            "",
+            "if __name__==\"__main__\":",
+            "\t${1:MyApp}().run()"
+        ]
+    }
+}

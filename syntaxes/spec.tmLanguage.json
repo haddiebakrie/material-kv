@@ -1,0 +1,39 @@
+{
+    "name": "Spec",
+	"scopeName": "source.spec",
+	"patterns": [
+		{
+			"name": "string.quoted.double.spec",
+			"begin": "\"",
+			"end": "\""
+		},
+		{
+			"name": "string.quoted.single.spec",
+			"begin": "'",
+			"end": "'"
+		},
+		{
+			"name": "comment.line.spec",
+			"match": "#[^:].*"
+		},
+		{
+			"name": "keyword.control.spec",
+			"match": "\\b(package|kivy|kivymd|buildozer|license|domain|source|title|name|dir|include_exts|iOS|ios|android|manifest|intent|logcat|logcat_filters|arch)\\b"
+		},
+		{
+			"name": "entity.name.tag.spec",
+			"match": "\\b(org|com|app|int|str|p4a)\\b"
+		},	
+		{
+			"explanation": "Header",
+			"name": "entity.name.tag.spec",
+			"begin": "\\[",
+			"end": "\\]"
+		},
+		{
+			"explanation": "Variables",
+			"match": "(([a-z_.]*))",
+			"name":"keyword.control.spec"
+		}
+	]
+}

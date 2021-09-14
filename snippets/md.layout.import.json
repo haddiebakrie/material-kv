@@ -1,0 +1,33 @@
+{
+    "Import KivyMD Box Layout": {
+        "prefix": "md.import.box",
+        "body": [
+            "from kivymd.uix.boxlayout import MDBoxLayout"
+        ]
+    },
+    "Import KivyMD Float Layout": {
+        "prefix": "md.import.float",
+        "body": [
+            "from kivymd.uix.floatlayout import MDFloatLayout"
+        ]
+    },
+    "Import KivyMD Grid Layout": {
+        "prefix": "md.import.grid",
+        "body": [
+            "from kivymd.uix.gridlayout import MDGridLayout"
+        ]
+    },
+
+    "Import KivyMD Relative Layout": {
+        "prefix": "md.import.relative",
+        "body": [
+            "from kivymd.uix.relativelayout import MDRelativeLayout"
+        ]
+    },
+    "Import KivyMD Stack Layout": {
+        "prefix": "md.import.stack",
+        "body": [
+            "from kivymd.uix.stacklayout import MDStackLayout"
+        ]
+    }
+}
