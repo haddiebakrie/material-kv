@@ -32,7 +32,6 @@ export function activate(context: vscode.ExtensionContext) {
 			// },
 			// gutterIconPath: __dirname + "/../icons/md-icons/abacus.svg",
 		});
-		
 		const iconDecorationType = vscode.window.createTextEditorDecorationType({
 			after: {
 				// contentIconPath: __dirname + "/../icons/md-icons/abacus.svg",
@@ -86,11 +85,45 @@ export function activate(context: vscode.ExtensionContext) {
 						};
 						colorDecoration.push(decorator);
 						
+						currentEditor.setDecorations(colorDecorationType, colorDecoration);
 					}
-				} else if (colorLineTextRaw.search("get_color_from_hex")) {
-					console.log(colorLineTextRaw);
 				}
-				currentEditor.setDecorations(colorDecorationType, colorDecoration);
+			}
+			while (match = hexColorRegEx.exec(allText)) {
+				const startPos = currentEditor.document.positionAt(match.index);
+				const endPos = currentEditor.document.positionAt(match.index + match[0].length);
+				const colorLineNumber = startPos.line;
+				const colorLineTextRaw = currentEditor.document.lineAt(colorLineNumber).text.replace(/\s/g, "");
+				const colorValue = match[1].replace(/('|")/g, "");
+				console.log(__dirname + "/../icons/md-icons/ab-testing.svg");
+				if (colorValue) {
+					const decorator = {
+						range: new vscode.Range(startPos, endPos), 
+						renderOptions: {
+							dark: {
+								before: {
+									contentText: "\u25FC",
+									contentIconPath: __dirname + "/../icons/md-icons/ab-testing.svg",
+									borderColor: "white",
+									color: "#" + colorValue,
+									fontStyle: "normal",
+									margin: "0 3px 0 3px",
+									width: "1",
+								},
+
+							},
+							gutterIconPath: __dirname + "/../icons/md-icons/ab-testing.svg",
+							gutterIconSize: "50%",
+						},
+						hoverMessage: colorValue
+
+					};
+					colorDecoration.push(decorator);
+					
+					currentEditor.setDecorations(colorDecorationType, colorDecoration);
+				}
+			
+			
 			}
 		}
 
@@ -115,15 +148,15 @@ export function activate(context: vscode.ExtensionContext) {
 				const icon = currentEditor.document.getText(new vscode.Range(startPos, endPos));
 				if (colorLineTextRaw.startsWith("icon:")){
 					console.log(icon);
-					let iconDir = __dirname + "/../icons/md-icons/ab-testing.svg";
+					let iconDir = "/../icons/md-icons/ab-testing.svg";
+					
 					const decorator = {
 						range: new vscode.Range(startPos, endPos), 
 						renderOptions: {
 							dark: {
 								before: {
 									// contentText: "g",
-									// contentIconPath: __dirname + "/../icons/m-icons/ab-testing.svg",
-									contentIconPath: iconDir
+									contentIconPath: __dirname + iconDir
 								},
 							},
 							// color: "blue",
@@ -138,7 +171,7 @@ export function activate(context: vscode.ExtensionContext) {
 							// 	width: "1",
 								// },
 								// gutterIconSize: "50%",
-							},
+						},
 					};
 					iconDecoration.push(decorator);
 				}
