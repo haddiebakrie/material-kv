@@ -1,10 +1,12 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
+import { readdir } from 'fs';
 import { relative } from 'path';
 import path = require('path');
 import { clearTimeout } from 'timers';
-import { pathToFileURL } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import * as vscode from 'vscode';
+import mdIconList = require('./mdicons');
 
 // variables declarations
 const colorRegEx = /\[\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*\]/g;
@@ -14,7 +16,7 @@ const iconRegEx = /((?:"|').*(?:"|'))/g;
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
+	let iconList = mdIconList.getIcon();	
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "material-kv" is now active!');
@@ -33,10 +35,10 @@ export function activate(context: vscode.ExtensionContext) {
 			// gutterIconPath: __dirname + "/../icons/md-icons/abacus.svg",
 		});
 		const iconDecorationType = vscode.window.createTextEditorDecorationType({
-			after: {
-				// contentIconPath: __dirname + "/../icons/md-icons/abacus.svg",
-				
-			},
+		});
+
+		const imageDecorationType = vscode.window.createTextEditorDecorationType({
+
 		});
         function addColorBox() {
 			let currentEditor = vscode.window.activeTextEditor;
@@ -103,17 +105,10 @@ export function activate(context: vscode.ExtensionContext) {
 							dark: {
 								before: {
 									contentText: "\u25FC",
-									contentIconPath: __dirname + "/../icons/md-icons/ab-testing.svg",
-									borderColor: "white",
 									color: "#" + colorValue,
-									fontStyle: "normal",
 									margin: "0 3px 0 3px",
-									width: "1",
 								},
-
 							},
-							gutterIconPath: __dirname + "/../icons/md-icons/ab-testing.svg",
-							gutterIconSize: "50%",
 						},
 						hoverMessage: colorValue
 
@@ -145,20 +140,25 @@ export function activate(context: vscode.ExtensionContext) {
 				const endPos = currentEditor.document.positionAt(match.index + match[0].length);
 				const colorLineNumber = startPos.line;
 				const colorLineTextRaw = currentEditor.document.lineAt(colorLineNumber).text.replace(/\s/g, "");
-				const icon = currentEditor.document.getText(new vscode.Range(startPos, endPos));
+				const icon = currentEditor.document.getText(new vscode.Range(startPos, endPos)).replace(/('|")/g, "");
 				if (colorLineTextRaw.startsWith("icon:")){
-					console.log(icon);
-					let iconDir = "/../icons/md-icons/ab-testing.svg";
-					
+					if (!iconList.includes(icon)){
+						continue;
+					}
 					const decorator = {
 						range: new vscode.Range(startPos, endPos), 
 						renderOptions: {
 							dark: {
 								before: {
-									// contentText: "g",
-									contentIconPath: __dirname + iconDir
+									contentIconPath: vscode.Uri.file(__dirname + "/../icons/md-icons/" + icon +  ".svg"),
+									backgroundColor: "#ffffff",
+									margin: "0 3px 0 3px",
+									height: "18px",
+									width: "18px",
+									borderRadius: "5px",
 								},
 							},
+							// gutterIconPath: vscode.Uri.file(__dirname + "/../icons/md-icons/" + icon +  ".svg")
 							// color: "blue",
 							// borderColor: "white",
 							// borderStyle: "solid",
@@ -177,25 +177,176 @@ export function activate(context: vscode.ExtensionContext) {
 				}
 			}
 			currentEditor.setDecorations(iconDecorationType, iconDecoration);
+			
+			
+			
+		};
+		const provider2 = vscode.languages.registerCompletionItemProvider(
+			'kv',
+			{
+				provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+					// get all text until the `position` and check if it reads `icon:*`
+					// and if so then complete with icon names.
+					const linePrefix = document.lineAt(position).text.substr(0, position.character);
+					if (!linePrefix.endsWith('icon:"') && (!linePrefix.endsWith('icon:\'')) &&
+						(!linePrefix.endsWith('icon: "')) && (!linePrefix.endsWith('icon: \''))
+					) {
+						return undefined;
+					}
+					
+					const completionList = [];
+
+					for (let i=0; i<iconList.length; i++){
+						const label = iconList[i];
+						if (!label) {
+							continue;
+						}
+						const cl = new vscode.CompletionItem(label, vscode.CompletionItemKind.Variable);
+						completionList.push(cl);
+					}
+					return completionList;
+				}
+			},
+			"\"", "\'"// triggered whenever a " or ' is typed
+		);
+
+	context.subscriptions.push(provider2);
+
+		function showImagePreview() {
+			const allText = currentEditor?.document.getText();
+			if (!currentEditor) {
+				return;
+			}
+			if (!allText){
+				return;
+			}
+
+            const imageDecoration: vscode.DecorationOptions[] = [];
+			let match;
+			while (match = iconRegEx.exec(allText)) {
+				const startPos = currentEditor.document.positionAt(match.index);
+				const endPos = currentEditor.document.positionAt(match.index + match[0].length);
+				const colorLineNumber = startPos.line;
+				const colorLineTextRaw = currentEditor.document.lineAt(colorLineNumber).text.replace(/\s/g, "");
+				const image = currentEditor.document.getText(new vscode.Range(startPos, endPos)).replace(/('|")/g, "");
+				if (colorLineTextRaw.startsWith("source:") || colorLineTextRaw.startsWith("image:")){
+					const imagePath = vscode.workspace.getWorkspaceFolder(currentEditor.document.uri)?.uri.path + "/" + image;
+					const imageMarkdown = new vscode.MarkdownString(`|  **Image** ![](${imagePath}) |`);
+					const decorator = {
+						range: new vscode.Range(startPos, endPos), 
+						renderOptions: {
+							dark: {
+								before: {
+									contentIconPath: vscode.Uri.file(__dirname + "/../icons/md-icons/image.svg"),
+									backgroundColor: "#ffffff",
+									margin: "0 3px 0 3px",
+									height: "18px",
+									width: "18px",
+									borderRadius: "5px",
+								},
+							},
+							gutterIconPath: vscode.Uri.file(imagePath)
+							// color: "blue",
+							// borderColor: "white",
+							// borderStyle: "solid",
+							// borderWidth: "2px"
+							// before: {
+							// 	// contentText: "Hel",
+							// 	borderColor: "white",
+							// 	fontStyle: "normal",
+							// 	margin: "0 3px 0 3px",
+							// 	width: "1",
+								// },
+							// 	gutterIconSize: "50%",
+						},
+						hoverMessage: imageMarkdown
+					};
+					imageDecoration.push(decorator);
+				}
+			}
+			currentEditor.setDecorations(imageDecorationType, imageDecoration);
 
 			
 		}
 
 		const document = vscode.window.activeTextEditor?.document;
 		function suggestFileInDirectory() {	
-			if (document) {
-				let currentWorkspace = vscode.workspace.getWorkspaceFolder(document.uri)?.uri;
+			let fileName;
+			let fileNames: string[] = [];
+
+			let lineWithFocus = vscode.window.activeTextEditor?.selection.active.line;
+			if (!lineWithFocus || !currentEditor || !document) {
+				return;
 			}
+			let lineText = currentEditor?.document.lineAt(lineWithFocus).text.trim();
+			if (lineText && lineText.startsWith('source:')) {
+				let currentWorkspace = vscode.workspace.getWorkspaceFolder(document.uri)?.uri;
+				if (currentWorkspace) {
+					let image = lineText.match(iconRegEx);
+					if (!image) {
+						return;
+					}
+					fileName = image.toString().replace(/('|")/g, "");
+					const currentWorkspacePath = vscode.workspace.asRelativePath(currentWorkspace);
+					
+					readdir(path.join(currentWorkspacePath,fileName), (err, files: string[]) => {
+						files.forEach((file) => {
+							const uri = vscode.Uri.file(file).path;
+							if (fileNames.includes(uri)) {
+								return;
+							}
+							fileNames.push(uri.toString());
+						});
+					});
+					console.log(fileNames.length);
+				}
+			}
+			const provider3 = vscode.languages.registerCompletionItemProvider(
+				'kv',
+				{
+				provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+					// get all text until the `position` and check if it reads `icon:*`
+					// and if so then complete with icon names.
+
+					
+					// if (!lineText.endsWith('source:"') && (!lineText.endsWith('source:\'')) &&
+					// 		(!lineText.endsWith('source: "')) && (!lineText.endsWith('source: \''))
+					// 	) {
+					// 		return undefined;
+					// 	}
+					const completionList: vscode.ProviderResult<vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>> = [];
+					for (let i=0; i<fileNames.length; i++){
+					// 	const label = fileNames[i].replace('/', '');
+					// 	if (!label) {
+					// 		continue;
+					// 	}
+						console.log(fileNames[i]);
+					// 	const cl = new vscode.CompletionItem(label, vscode.CompletionItemKind.File);
+						
+						
+					// 	completionList.push(cl);
+					}
+					// 	console.log(completionList);
+					// 	console.log(cl);
+					// 	// console.log(completionList);
+					return completionList;
+				}
+			},
+			"\\", "/"// triggered whenever a " or ' is typed
+			);
 		}
-		
+			
+
+
 		function triggerUpdateDecorations() {
 			if (timeout) {
 				clearTimeout(timeout);
 				timeout = undefined;
 			}
 			timeout = setTimeout(addColorBox, 500);
-			// timeout = setTimeout(suggestFileInDirectory, 500);
+			timeout = setTimeout(suggestFileInDirectory, 500);
 			timeout = setTimeout(showIconPreview, 500);
+			timeout = setTimeout(showImagePreview, 500);
 		}
 		
 		if (currentEditor){
@@ -239,10 +390,4 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 		let disposable = vscode.commands.registerCommand('material-kv.decoratecolor', () => {
-		context.subscriptions.push(disposable);
-	}
-	);
-}
-
-// this method is called when your extension is deactivated
-export function deactivate() {}
+		conte
