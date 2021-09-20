@@ -2,7 +2,7 @@
   "name": "material-kv",
   "displayName": "Material Kivy",
   "description": "This VS Code extension adds support for Kivy and KivyMD including Syntax highlighting, Color Preview, MDIcons preview e.t.c, as well as support for the .spec file type for Buildozer.spec.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "icon": "Material.png",
   "publisher": "haddiebakrie",
   "engines": {
