@@ -91,7 +91,7 @@
         ]
     },
     "KivyMD Bottom Navigation with Toolbar Template": {
-        "prefix": "md.create.bottomnav",
+        "prefix": "md.create.bottomnav.toolbar",
         "body": [
             "from kivy.lang import Builder",
             "from kivymd.app import MDApp",

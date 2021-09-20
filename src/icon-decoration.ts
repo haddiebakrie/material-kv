@@ -1,6 +1,4 @@
 import * as vscode from 'vscode';
-
-
 const iconRegEx = /((?:"|').*(?:"|'))/g;
 import { getIcon } from './mdicons';
 
@@ -33,7 +31,7 @@ export function showIconPreview() {
             }
             let iconPath = vscode.Uri.file(__dirname + "/../icons/md-icons/" + icon +  ".svg");
             const iconMarkdown = new vscode.MarkdownString(
-                [`**MDIcon - ${icon.toUpperCase()}** `,
+                [`**MDIcon** `,
                 '',
                 `&nbsp;`,
                 `![](${iconPath.path}|"height=50,width=50")`,

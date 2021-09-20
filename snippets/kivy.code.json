@@ -14,7 +14,7 @@
     "Widget's Interaction": {
         "prefix": "disabled",
         "body": [
-            "disabled: ${1|'True','False'|}"
+            "disabled: ${1|'True','False'|}\n$2"
         ]
     },
     "Widget's Heigt": {
@@ -69,6 +69,74 @@
         "prefix": "center_y",
         "body": [
             "center_y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+        ]
+    },
+    "Kivy Dynamic Inheritance": {
+        "prefix": "mkv.class",
+        "body": [
+            "<${1:MyWidget}@${2:BaseClass}>:",
+            "\t${3:}"
+        ]
+    },
+    "Kivy Rule Declaration": {
+        "prefix": "mkv.rule",
+        "body": [
+            "<${1:MyRule}>:",
+            "\t${2:}"
+        ]
+    },
+    "Kivy Import Module as Specific name": {
+        "prefix": "mkv.import",
+        "body": [
+            "#:import ${1:alias} ${2:package}"
+        ]
+    },
+    "Kivy set variable": {
+        "prefix": "mkv.set",
+        "body": [
+            "#: set ${1:key} ${2:expr}"
+        ]
+    },
+    "Kivy Include external kivy file": {
+        "prefix": "mkv.include",
+        "body": [
+            "#:include ${1:filename}"
+        ]
+    },
+    "Kivy Force include external kivy file": {
+        "prefix": "mkv.include.force",
+        "body": [
+            "#:include force ${1:filename}"
+        ]
+    },
+    "Kivy Single Line if-else expression": {
+        "prefix": "mkv.if",
+        "body": [
+            "${1:ifTrue} if ${2:condition} else ${3:ifFalse}"
+        ]
+    },
+    "Kivy For loop": {
+        "prefix": "mkv.for",
+        "body": [
+            "for ${1:target} in ${2:iter}: ${3:pass}"
+        ]
+    }
+    ,
+    "Kivy Multiline if-else expression": {
+        "prefix": "mkv.if.multi",
+        "body": [
+            "if ${1:condition}: ${2:pass}\\",
+            "else: ${3:pass}"
+        ]
+    },
+    "Kivy if-elif expression": {
+        "prefix": "mkv.if.elif",
+        "body": [
+            "if ${1:condition}:\\",
+            "${2:pass}",
+            "elif ${3:condition}:\\",
+            "${4:pass}",
+            "else: ${5:pass}"
         ]
     }
 }

@@ -1,70 +1,59 @@
-# material-kv README
+# Material Kivy
 
-This is the README for your extension "material-kv". After writing up a brief description, we recommend including the following sections.
+## Introduction
+This VS Code extension adds support for Kivy and KivyMD including Syntax highlighting, Color Preview, MDIcons preview e.t.c, as well as support for the .spec file type for Buildozer.spec.
 
 ## Features
+ <br>
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+ ![Syntax Highlights with MDIcon and Image Preview](https://github.com/cutehaddy/material-kv/blob/main/material-kv.PNG)
 
-For example if there is an image subfolder under your extension project workspace:
+ <br>
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Syntax Highlights with MDIcon and Image Preview
+- `Buildozer.spec` file syntax highlights
+- Ready made starter templates
+- Autocomplete Import statements
+- Autocomplete MDIcon names
+- `Builder.load_string()` syntax support
+- Code snippet for complex kivy and kivymd widgets like Navigation Drawers e.t.c
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
+### First release.
 
-Initial release of ...
+<br>
 
-### 1.0.1
+## Some usefull shortcuts
 
-Fixed issue #.
+A cheat sheet for some commands and shortcuts.
 
-### 1.1.0
+| Shortcut       | Name |
+|----------------|------|
+| `md.create.bottomnav`|KivyMD Bottom Navigation Template|
+| `md.create.toolbar` | KivyMD Toolbar Template |
+|`md.create.bottomnav.toolbar` | KivyMD Bottom Navigation with Toolbar Template|
+|`mkvwidgetcls`| Widget Class Skeleton | |
+|`mkvapp.starter` | Kivy Basic App Starter |
+|`mdapp.starter` | KivyMD Basic App Starter |
+|`mdapp.template.1` | KivyMD App Template 1 |
+|`mdapp.template.2` | KivyMD App Template 2 |
+|`mdbottomnav` | KivyMD Bottom Navigation Skeleton |
+|`mdnavlayout` | KivyMD Navigation Layout Skeleton |
+|`mdnavrail` | KivyMD Navigation Rail Skeleton |
+|`mdtoolbar` | KivyMD Toolbar without Icon |
+|`mdtoolbar.right` | KivyMD Toolbar with right Icon |
+|`mdtoolbar.left` | KivyMD Toolbar with left Icon |
+|`mdtoolbar.both` | KivyMD Toolbar with both Icon |
+|`mdcardswipe` | KivyMD Card Swipe Skeleton |
+|`canvas.rect` | Canvas Rectangle Instruction |
+|`canvas.roundrect` | Canvas Round Rectangle Instruction |
+|`canvas.ellipse` | Canvas Ellipse Instruction |
+|`canvas.line` | Canvas Line Instruction |
 
-Added features X, Y, and Z.
+<br>
+<br>
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+# Enjoy!

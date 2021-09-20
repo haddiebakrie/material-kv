@@ -1,6 +1,5 @@
 const colorRegEx = /\[\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*[,]\s*(\d[.]\d*|\d)\s*\]/g;
 const hexColorRegEx = /get_color_from_hex\(((?:"|').*(?:"|'))\)/g;
-const iconRegEx = /((?:"|').*(?:"|'))/g;
 import * as vscode from 'vscode';
 import { convertToRGBA } from './kivy-to-rgba';
 import { rgbaToHex } from './rgba-to-hex';
