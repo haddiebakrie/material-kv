@@ -6,7 +6,7 @@ This VS Code extension adds support for Kivy and KivyMD including Syntax highlig
 ## Features
  <br>
 
- ![Syntax Highlights with MDIcon and Image Preview](https://github.com/cutehaddy/material-kv/blob/master/images/material-kv.PNG)
+![Syntax Highlights with MDIcon and Image Preview](https://github.com/cutehaddy/material-kv/blob/master/images/material-kv.PNG)
 
  <br>
 
