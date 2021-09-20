@@ -166,21 +166,6 @@
         ],
         "configuration": "./kv-language-configuration.json"
       }
-    ],
-    "commands": [
-      {
-        "command": "material-kv.extract-to-current",
-        "title": "Extract to Current File."
-      }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "material-kv.extract-to-current",
-          "when": "editorLangId == kv",
-          "group": "1_modification"
-        }
-      ]
-    }
+    ]
   }
 }
