@@ -2,123 +2,123 @@
     "Widget's Size hint": {
         "prefix": "size_hint",
         "body": [
-            "size_hint: ${1|None,1|}, ${2|None,1|}"
+            "size_hint: ${1|None,1|}, ${2|None,1|}$0"
         ]
     },
     "BoxLayout Orientation": {
         "prefix": "orientation",
         "body": [
-            "orientation: ${1|'vertical','horizontal'|}"
+            "orientation: '${1|vertical,horizontal|}'$0"
         ]
     },
     "Widget's Interaction": {
         "prefix": "disabled",
         "body": [
-            "disabled: ${1|'True','False'|}\n$2"
+            "disabled: '${1|True,False|}'$0"
         ]
     },
     "Widget's Heigt": {
         "prefix": "height",
         "body": [
-            "height: ${1|dp(1),dp(2),dp(3),dp(4),dp(5),dp(6),dp(7),dp(8),dp(9),dp(10),dp(20),dp(30),dp(40),dp(50)dp(60),dp(70),dp(80),dp(90),dp(100)|}"
+            "height: ${1|dp(1),dp(2),dp(3),dp(4),dp(5),dp(6),dp(7),dp(8),dp(9),dp(10),dp(20),dp(30),dp(40),dp(50)dp(60),dp(70),dp(80),dp(90),dp(100)|}$0"
         ]
     },
     "Widget's Opacity": {
         "prefix": "opacity",
         "body": [
-            "opacity: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "opacity: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's Pos hint": {
         "prefix": "pos_hint",
         "body": [
-            "pos_hint: {${1|\"center_x\" ,\"right\",\"x\"|}: ${2|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|},${3|\"center_y,top,y\"|}: ${4|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}}"
+            "pos_hint: {'${1|center_x,right,x|}': ${2|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|},'${3|center_y,top,y|}': ${4|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}}$0"
         ]
     },
     "Widget's Right": {
         "prefix": "right",
         "body": [
-            "right: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "right: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's X": {
         "prefix": "x",
         "body": [
-            "x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's Top": {
         "prefix": "top",
         "body": [
-            "top: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "top: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's Y": {
         "prefix": "y",
         "body": [
-            "y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's Center Horizontally": {
         "prefix": "center_x",
         "body": [
-            "center_x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "center_x: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Widget's Center Vertically": {
         "prefix": "center_y",
         "body": [
-            "center_y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}"
+            "center_y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
         ]
     },
     "Kivy Dynamic Inheritance": {
         "prefix": "mkv-class",
         "body": [
             "<${1:MyWidget}@${2:BaseClass}>:",
-            "\t${3:}"
+            "\t${3:}$0"
         ]
     },
     "Kivy Rule Declaration": {
         "prefix": "mkv-rule",
         "body": [
             "<${1:MyRule}>:",
-            "\t${2:}"
+            "\t${2:}$0"
         ]
     },
     "Kivy Import Module as Specific name": {
         "prefix": "mkv-import",
         "body": [
-            "#:import ${1:alias} ${2:package}"
+            "#:import ${1:alias} ${2:package}$0"
         ]
     },
     "Kivy set variable": {
         "prefix": "mkv-set",
         "body": [
-            "#: set ${1:key} ${2:expr}"
+            "#: set ${1:key} ${2:expr}$0"
         ]
     },
     "Kivy Include external kivy file": {
         "prefix": "mkv-include",
         "body": [
-            "#:include ${1:filename}"
+            "#:include ${1:filename}$0"
         ]
     },
     "Kivy Force include external kivy file": {
         "prefix": "mkv-include-force",
         "body": [
-            "#:include force ${1:filename}"
+            "#:include force ${1:filename}$0"
         ]
     },
     "Kivy Single Line if-else expression": {
         "prefix": "mkv-if",
         "body": [
-            "${1:ifTrue} if ${2:condition} else ${3:ifFalse}"
+            "${1:ifTrue} if ${2:condition} else ${3:ifFalse}$0"
         ]
     },
     "Kivy For loop": {
         "prefix": "mkv-for",
         "body": [
-            "for ${1:target} in ${2:iter}: ${3:pass}"
+            "for ${1:target} in ${2:iter}: ${3:pass}$0"
         ]
     }
     ,
@@ -126,7 +126,7 @@
         "prefix": "mkv-if-multi",
         "body": [
             "if ${1:condition}: ${2:pass}\\",
-            "else: ${3:pass}"
+            "else: ${3:pass}$0"
         ]
     },
     "Kivy if-elif expression": {
@@ -136,7 +136,7 @@
             "${2:pass}",
             "elif ${3:condition}:\\",
             "${4:pass}",
-            "else: ${5:pass}"
+            "else: ${5:pass}$0"
         ]
     }
 }

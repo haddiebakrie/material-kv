@@ -28,6 +28,7 @@ function showIconPreview() {
                 continue;
             }
             let iconPath = vscode.Uri.file(__dirname + "/../icons/md-icons/" + icon + ".svg");
+            let iconPathb = __dirname + "/../icons/md-icons/" + icon + ".svg";
             const iconMarkdown = new vscode.MarkdownString([`**MDIcon** `,
                 '',
                 `&nbsp;`,
@@ -44,7 +45,6 @@ function showIconPreview() {
                             height: "14px",
                             width: "12px",
                         },
-                        gutterIconPath: iconPath,
                     },
                 },
                 hoverMessage: iconMarkdown
