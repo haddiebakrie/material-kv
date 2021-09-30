@@ -14,19 +14,19 @@
     "Import KivyMD Bottom Sheet": {
         "prefix": "md-import-bottomsheet",
         "body": [
-            "from kivymd.uix.bottomsheet import ${1|MDListBottomSheet,MDGridBottomSheet,MDCustomBottomSheet|}"
+            "from kivymd.uix.bottomsheet import ${1|MDListBottomSheet,MDGridBottomSheet,MDCustomBottomSheet|}$0"
         ]
     },
     "Import KivyMD Button": {
         "prefix": "md-import-button",
         "body": [
-            "from kivymd.uix.button import ${1|MDIconButton,MDFloatingActionButton,MDRaisedButton,MDFlatButton,MDRectangleFlatButton,MDRectangleFlatIconButton,MDRoundFlatButton,MDRoundFlatIconButton,MDFillRoundFlatButton,MDFillRoundFlatIconButton,MDTextButton,MDFloatingActionButtonSpeedDail|}"
+            "from kivymd.uix.button import ${1|MDIconButton,MDFloatingActionButton,MDRaisedButton,MDFlatButton,MDRectangleFlatButton,MDRectangleFlatIconButton,MDRoundFlatButton,MDRoundFlatIconButton,MDFillRoundFlatButton,MDFillRoundFlatIconButton,MDTextButton,MDFloatingActionButtonSpeedDail|}$0"
         ]
     },
     "Import KivyMD Card": {
         "prefix": "md-import-card",
         "body": [
-            "from kivymd.uix.card import ${1|MDCard,MDCardSwipe|}"
+            "from kivymd.uix.card import ${1|MDCard,MDCardSwipe|}$0"
         ]
     },
     "Import KivyMD Carousel": {
@@ -62,7 +62,7 @@
     "Import KivyMD Expansion Panel": {
         "prefix": "md-import-expansionpanel",
         "body": [
-            "from kivymd.uix.carousel import ${1|MDExpansionPanel,MDExpansionPanelOneLine,MDExpansionPanelTwoLine,MDExpansionPanelThreeLine|}"
+            "from kivymd.uix.carousel import ${1|MDExpansionPanel,MDExpansionPanelOneLine,MDExpansionPanelTwoLine,MDExpansionPanelThreeLine|}$0"
         ]
     },
     "Import KivyMD File Manager": {
@@ -74,37 +74,37 @@
     "Import KivyMD Smart Tile (Image List)": {
         "prefix": "md-import-smarttile",
         "body": [
-            "from kivymd.uix.carousel import ${1|SmartTileWithStar,SmartTileWithLabel|}"
+            "from kivymd.uix.carousel import ${1|SmartTileWithStar,SmartTileWithLabel|}$0"
         ]
     },
     "Import KivyMD List": {
         "prefix": "md-import-list",
         "body": [
-            "from kivymd.uix.list import ${1|OneLineListItem,TwoLineListItem,ThreeLineListItem,OneLineAvatarListItem,TwoLineAvatarItem,ThreeLineAvatarListItem,OneLineIconListItem,TwoLineIconListItem,ThreeLineIconListItem,OneLineAvatarIconListItem,TwoLineAvatarIconListItem,ThreeLineAvatarIconListItem,ILeftBody,ILeftBodyTouch,IRightBody,IRightBodyTouch,ILeftBody,IRightBody,ImageLeftWidget,ImageRightWidget,IconRightWidget,IconLeftWidget|}"
+            "from kivymd.uix.list import ${1|OneLineListItem,TwoLineListItem,ThreeLineListItem,OneLineAvatarListItem,TwoLineAvatarItem,ThreeLineAvatarListItem,OneLineIconListItem,TwoLineIconListItem,ThreeLineIconListItem,OneLineAvatarIconListItem,TwoLineAvatarIconListItem,ThreeLineAvatarIconListItem,ILeftBody,ILeftBodyTouch,IRightBody,IRightBodyTouch,ILeftBody,IRightBody,ImageLeftWidget,ImageRightWidget,IconRightWidget,IconLeftWidget|}$0"
         ]
     },
     "Import KivyMD Menu": {
         "prefix": "md-import-menu",
         "body": [
-            "from kivymd.uix.menu import ${1|MDDropdownMenu,RightContent|}"
+            "from kivymd.uix.menu import ${1|MDDropdownMenu,RightContent|}$0"
         ]
     },
     "Import KivyMD Navigation Drawer": {
         "prefix": "md-import-navdrawer",
         "body": [
-            "from kivymd.uix.navigationdrawer import ${1|MDNavigationLayout,MDNavigationDrawer|}"
+            "from kivymd.uix.navigationdrawer import ${1|MDNavigationLayout,MDNavigationDrawer|}$0"
         ]
     },
     "Import KivyMD Navigation Rail": {
         "prefix": "md-import-navrail",
         "body": [
-            "from kivymd.uix.navigationrail import ${1|MDNavigationRail,MDNavigationRailItem|}"
+            "from kivymd.uix.navigationrail import ${1|MDNavigationRail,MDNavigationRailItem|}$0"
         ]
     },
     "Import KivyMD Pickers": {
         "prefix": "md-import-picker",
         "body": [
-            "from kivymd.uix.picker import ${1|MDTimePicker,MDDatePicker,MDThemePicker|}"
+            "from kivymd.uix.picker import ${1|MDTimePicker,MDDatePicker,MDThemePicker|}$0"
         ]
     },
     "Import KivyMD Progress Bar": {
@@ -152,13 +152,13 @@
     "Import KivyMD Swiper": {
         "prefix": "md-import-swiper",
         "body": [
-            "from kivymd.uix.swiper import ${|MDSwiper,MDSwiperItem|}"
+            "from kivymd.uix.swiper import ${1|MDSwiper,MDSwiperItem|}$0"
         ]
     },
     "Import KivyMD Tabs": {
         "prefix": "md-import-tab",
         "body": [
-            "from kivymd.uix_tab import ${|MDTabBase,MDTabs|}"
+            "from kivymd.uix.tab import ${1|MDTabBase,MDTabs|}$0"
         ]
     }
 

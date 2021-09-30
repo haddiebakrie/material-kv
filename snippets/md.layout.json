@@ -3,7 +3,7 @@
         "prefix": "md-box",
         "body": [
             "MDBoxLayout:",
-            "\t$1"
+            "\t$0"
         ],
         "description":"BoxLayout class equivalent. Simplifies working with some widget properties."
     },
@@ -11,7 +11,7 @@
         "prefix": "md-float",
         "body": [
             "MDFloatLayout:",
-            "\t$1"
+            "\t$0"
         ],
         "description":"FloatLayout class equivalent. Simplifies working with some widget properties."
     },
@@ -19,7 +19,7 @@
         "prefix": "md-grid",
         "body": [
             "MDGridLayout:",
-            "\t$1"
+            "\t$0"
         ],
         "description":"GridLayout class equivalent. Simplifies working with some widget properties."
     },
@@ -27,7 +27,7 @@
         "prefix": "md-relative",
         "body": [
             "MDRelativeLayout:",
-            "\t$1"
+            "\t$0"
         ],
         "description":"RelativeLayout class equivalent. Simplifies working with some widget properties."
     }
