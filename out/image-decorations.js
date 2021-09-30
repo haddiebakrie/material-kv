@@ -36,13 +36,10 @@ function showImagePreview() {
                         before: {
                             contentIconPath: vscode.Uri.file(__dirname + "/../icons/md-icons/image.svg"),
                             backgroundColor: "#ffffff",
-                            margin: "0 3px 0 3px",
-                            height: "18px",
-                            width: "18px",
-                            borderRadius: "5px",
+                            height: "14px",
+                            width: "12px",
                         },
                     },
-                    gutterIconPath: vscode.Uri.file(imagePath)
                 },
                 hoverMessage: imageMarkdown
             };

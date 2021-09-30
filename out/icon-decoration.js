@@ -41,10 +41,8 @@ function showIconPreview() {
                         before: {
                             contentIconPath: iconPath,
                             backgroundColor: "#ffffff",
-                            margin: "2px 3px 0 3px",
-                            height: "18px",
-                            width: "18px",
-                            borderRadius: "4px",
+                            height: "14px",
+                            width: "12px",
                         },
                         gutterIconPath: iconPath,
                     },
