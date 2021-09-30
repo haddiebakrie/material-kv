@@ -1,6 +1,6 @@
 {
     "KivyMD Toolbar Template": {
-        "prefix": "md.create.toolbar",
+        "prefix": "md-create-toolbar",
         "body": [
              "from kivy.lang import Builder",
              "from kivymd.app import MDApp",
@@ -38,7 +38,7 @@
         ]
     },
     "KivyMD Bottom Navigation Template": {
-        "prefix": "md.create.bottomnav",
+        "prefix": "md-create-bottomnav",
         "body": [
             "from kivy.lang import Builder",
             "from kivymd.app import MDApp",
@@ -91,7 +91,7 @@
         ]
     },
     "KivyMD Bottom Navigation with Toolbar Template": {
-        "prefix": "md.create.bottomnav.toolbar",
+        "prefix": "md-create-bottomnav-toolbar",
         "body": [
             "from kivy.lang import Builder",
             "from kivymd.app import MDApp",

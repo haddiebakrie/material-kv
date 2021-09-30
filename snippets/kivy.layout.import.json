@@ -1,48 +1,48 @@
 {
     "Import Kivy Anchor Layout": {
-        "prefix": "mkv.import.anchor",
+        "prefix": "mkv-import-anchor",
         "body": [
             "from kivy.uix.anchorlayout import AnchorLayout"
         ]
     },
     "Import Kivy Box Layout": {
-        "prefix": "mkv.import.box",
+        "prefix": "mkv-import-box",
         "body": [
             "from kivy.uix.boxlayout import BoxLayout"
         ]
     },
     "Import Kivy Float Layout": {
-        "prefix": "mkv.import.float",
+        "prefix": "mkv-import-float",
         "body": [
             "from kivy.uix.floatlayout import FloatLayout"
         ]
     },
     "Import Kivy Grid Layout": {
-        "prefix": "mkv.import.grid",
+        "prefix": "mkv-import-grid",
         "body": [
             "from kivy.uix.gridlayout import GridLayout"
         ]
     },
     "Import Kivy Page Layout": {
-        "prefix": "mkv.import.page",
+        "prefix": "mkv-import-page",
         "body": [
             "from kivy.uix.pagelayout import PageLayout"
         ]
     },
     "Import Kivy Relative Layout": {
-        "prefix": "mkv.import.relative",
+        "prefix": "mkv-import-relative",
         "body": [
             "from kivy.uix.relativelayout import RelativeLayout"
         ]
     },
     "Import Kivy Scatter Layout": {
-        "prefix": "mkv.import.scatter",
+        "prefix": "mkv-import-scatter",
         "body": [
-            "from kivy.uix.scatterlayout import ScatterLayout"
+            "from kivy-uix.scatterlayout import ScatterLayout"
         ]
     }, 
     "Import Kivy Stack Layout": {
-        "prefix": "mkv.import.stack",
+        "prefix": "mkv-import-stack",
         "body": [
             "from kivy.uix.stacklayout import StackLayout"
         ]

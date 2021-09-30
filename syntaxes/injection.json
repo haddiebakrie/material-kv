@@ -4,7 +4,7 @@
 	"patterns": [
 		{
 			"contentName": "source.kv",
-			"begin": "Builder\\.load_string\\(\\w*(\"\"\"|''')",
+			"begin": "Builder\\.load_string\\((\\w*(\"\"\"|'''))",
 			"end": "\\w*(\\1)",
 			"patterns": [
 				{

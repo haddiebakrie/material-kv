@@ -1,6 +1,6 @@
 {
     "Widget Class Skeleton": {
-        "prefix": "mkvwidgetcls",
+        "prefix": "mkv-widgetcls",
         "body":[
             "from kivy.lang.builder import Builder",
             "",
@@ -16,7 +16,7 @@
         "description":"A custom widget class creation Template with Builder.load_string."
     },
     "Kivy App Starter": {
-        "prefix": "mkvapp.starter",
+        "prefix": "mkv-app-starter",
         "body": [
             "from kivy.app import App",
             "",
@@ -29,7 +29,7 @@
         ]
     },
     "KivyMD App Starter": {
-        "prefix": "mdapp.starter",
+        "prefix": "md-app-starter",
         "body": [
             "from kivymd.app import MDApp",
             "",
@@ -42,7 +42,7 @@
         ]
     },
     "KivyMD App Template 1": {
-        "prefix": "mdapp.template.1",
+        "prefix": "md-app-template1",
         "body": [
             "from kivymd.app import MDApp",
             "from kivy.uix.screenmanager import ScreenManager, Screen",
@@ -75,7 +75,7 @@
         ]
     },
     "KivyMD App Template 2": {
-        "prefix": "mdapp.template.2",
+        "prefix": "md-app-template2",
         "body": [
             "from kivymd.app import MDApp",
             "from kivy.uix.screenmanager import Screen",

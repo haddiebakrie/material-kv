@@ -32,26 +32,26 @@ A cheat sheet for some commands and shortcuts.
 
 | Shortcut       | Name |
 |----------------|------|
-| `md.create.bottomnav`|KivyMD Bottom Navigation Template|
-| `md.create.toolbar` | KivyMD Toolbar Template |
-|`md.create.bottomnav.toolbar` | KivyMD Bottom Navigation with Toolbar Template|
+| `md-create-bottomnav`|KivyMD Bottom Navigation Template|
+| `md-create-toolbar` | KivyMD Toolbar Template |
+|`md-create-bottomnav-toolbar` | KivyMD Bottom Navigation with Toolbar Template|
 |`mkvwidgetcls`| Widget Class Skeleton | |
-|`mkvapp.starter` | Kivy Basic App Starter |
-|`mdapp.starter` | KivyMD Basic App Starter |
-|`mdapp.template.1` | KivyMD App Template 1 |
-|`mdapp.template.2` | KivyMD App Template 2 |
+|`mkvapp-starter` | Kivy Basic App Starter |
+|`mdapp-starter` | KivyMD Basic App Starter |
+|`mdapp-template1` | KivyMD App Template 1 |
+|`mdapp-template2` | KivyMD App Template 2 |
 |`mdbottomnav` | KivyMD Bottom Navigation Skeleton |
 |`mdnavlayout` | KivyMD Navigation Layout Skeleton |
 |`mdnavrail` | KivyMD Navigation Rail Skeleton |
 |`mdtoolbar` | KivyMD Toolbar without Icon |
-|`mdtoolbar.right` | KivyMD Toolbar with right Icon |
-|`mdtoolbar.left` | KivyMD Toolbar with left Icon |
-|`mdtoolbar.both` | KivyMD Toolbar with both Icon |
+|`mdtoolbar-right` | KivyMD Toolbar with right Icon |
+|`mdtoolbar-left` | KivyMD Toolbar with left Icon |
+|`mdtoolbar-both` | KivyMD Toolbar with both Icon |
 |`mdcardswipe` | KivyMD Card Swipe Skeleton |
-|`canvas.rect` | Canvas Rectangle Instruction |
-|`canvas.roundrect` | Canvas Round Rectangle Instruction |
-|`canvas.ellipse` | Canvas Ellipse Instruction |
-|`canvas.line` | Canvas Line Instruction |
+|`canvas-rect` | Canvas Rectangle Instruction |
+|`canvas-roundrect` | Canvas Round Rectangle Instruction |
+|`canvas-ellipse` | Canvas Ellipse Instruction |
+|`canvas-line` | Canvas Line Instruction |
 
 <br>
 <br>

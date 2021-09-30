@@ -1,10 +1,10 @@
 {
     "All KivyMD Button classes": {
-        "prefix": ".buttons",
+        "prefix": "mkv-buttons",
         "body": "${1|MDIconButton:\n\t,MDFloatingActionButton:\n\t,MDRaisedButton:\n\t,MDFlatButton:\n\t,MDRectangleFlatButton:\n\t,MDRectangleFlatIconButton:\n\t,MDRoundFlatButton:\n\t,MDRoundFlatIconButton:\n\t,MDFillRoundFlatButton:\n\t,MDFillRoundFlatIconButton:\n\t,MDTextButton:\n\t,MDFloatingActionButtonSpeedDail:\n\t|}"
     },
     "All KivyMD Card": {
-        "prefix": ".card",
+        "prefix": "mkv-cards",
         "body": "${1|MDCard:\n\t,MDCardSwipe:\n\t,MDCardSwipeFrontBox:\n\t,MDCardSwipeLayerBox:\n\t|}"
     }
 }
