@@ -109,7 +109,7 @@
             "\tRoundedRectangle:",
             "\t\tsize: self.size[0], self.size[1]",
             "\t\tpos: self.pos",
-            "\t\tradius: dp(20)",
+            "\t\tradius: [dp(20), dp(20)]",
             ""
         ]
     },
@@ -138,5 +138,13 @@
             "\t\twidth: dp(2)",
             ""
         ]
+    },
+    "All KivyMD Button classes": {
+        "prefix": "mkv-buttons",
+        "body": "${1|MDIconButton,MDFloatingActionButton,MDRaisedButton,MDFlatButton,MDRectangleFlatButton,MDRectangleFlatIconButton,MDRoundFlatButton,MDRoundFlatIconButton,MDFillRoundFlatButton,MDFillRoundFlatIconButton,MDTextButton,MDFloatingActionButtonSpeedDail|}:$0"
+    },
+    "All KivyMD Card": {
+        "prefix": "mkv-cards",
+        "body": "${1|MDCard,MDCardSwipe,MDCardSwipeFrontBox,MDCardSwipeLayerBox|}:$0"
     }
 }

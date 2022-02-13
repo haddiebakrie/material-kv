@@ -11,6 +11,16 @@
 					"include": "source.kv"
 				}
 			]
+		},
+		{
+			"contentName": "source.kv",
+			"begin": "KV\\s*=\\s*(\\w*(\"\"\"|'''))",
+			"end": "(\\w*(\"\"\"|'''))",
+			"patterns": [
+				{
+					"include": "source.kv"
+				}
+			]
 		}
 	],
 	"scopeName": "styled"

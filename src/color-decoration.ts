@@ -4,10 +4,8 @@ import * as vscode from 'vscode';
 import { convertToRGBA } from './kivy-to-rgba';
 import { rgbaToHex } from './rgba-to-hex';
 
-
 const colorDecorationType = vscode.window.createTextEditorDecorationType({
 });
-
 
 export function addColorBox() {
     let currentEditor = vscode.window.activeTextEditor;
@@ -20,7 +18,7 @@ export function addColorBox() {
     }
     const colorDecoration: vscode.DecorationOptions[] = [];
     let match;
-    while (match = colorRegEx.exec(allText)) {
+    while ((match = colorRegEx.exec(allText))) {
         const startPos = currentEditor.document.positionAt(match.index);
         const endPos = currentEditor.document.positionAt(match.index + match[0].length);
         const colorLineNumber = startPos.line;
@@ -50,15 +48,13 @@ export function addColorBox() {
                             margin: "0 3px 0 3px",
                             width: "1",
                         },
-                        gutterIconPath: __dirname + "/../icons/md-icons/ab-testing.svg",
-                        gutterIconSize: "50%",
                     },
                 };
                 colorDecoration.push(decorator);
                 
-                currentEditor.setDecorations(colorDecorationType, colorDecoration);
             }
         }
+        
     }
     while (match = hexColorRegEx.exec(allText)) {
         const startPos = currentEditor.document.positionAt(match.index);
@@ -66,7 +62,6 @@ export function addColorBox() {
         const colorLineNumber = startPos.line;
         const colorLineTextRaw = currentEditor.document.lineAt(colorLineNumber).text.replace(/\s/g, "");
         const colorValue = match[1].replace(/('|")/g, "");
-        console.log(__dirname + "/../icons/md-icons/ab-testing.svg");
         if (colorValue) {
             const decorator = {
                 range: new vscode.Range(startPos, endPos), 
@@ -80,13 +75,12 @@ export function addColorBox() {
                     },
                 },
                 hoverMessage: colorValue
-
+                
             };
             colorDecoration.push(decorator);
             
-            currentEditor.setDecorations(colorDecorationType, colorDecoration);
         }
-    
-    
     }
+    currentEditor.setDecorations(colorDecorationType, colorDecoration);
+    currentEditor.setDecorations(colorDecorationType, colorDecoration);
 }

@@ -1,50 +1,50 @@
 
 import * as vscode from 'vscode';
 
-const currentEditor = vscode.window.activeTextEditor;
 
-export function isKivyWidget(lineText: string, selection: string) {
+export function isKivyWidget(lineText: string) {
     const rawLineText = lineText.trim();
     const firstChar = rawLineText[0];
     const firstCharUpper = firstChar.toUpperCase();
     if (!rawLineText.endsWith(':') || !(firstChar===firstCharUpper)){
-        vscode.window.showErrorMessage('The current selection is not a Widget, Make sure your Wiget is in Camel case e.g \'MyWidget\'.');
+        vscode.window.showInformationMessage('The current selection is not a Widget, Make sure your Wiget is in Camel case e.g \'MyWidget\'.');
         return false;
     }
     // const widgetName = selection;
     return true;
 }
 
-export function getWidgetRuleAndChildren(lineText: string, lineNumber: number){
-    if (!currentEditor) {
+export function getWidgetRuleAndChildren(document: vscode.TextDocument, lineText: string, lineNumber: number){
+    if (!document) {
+        return;
+    }
+
+    if (!isKivyWidget(lineText)){
         return;
     }
 
     const tabLength = getTabLength(lineText);
 
     const widgetRule = [];
-    let widgetRuleLastLine = lineNumber;
-    for (let i=lineNumber+1; i<currentEditor.document.lineCount; i++){
-        const currentLineText = currentEditor.document.lineAt(i).text;
+    for (let i=lineNumber+1; i<document.lineCount; i++){
+        const currentLineText = document.lineAt(i).text;
         const currentTabLength = getTabLength(currentLineText);
-        console.log(currentTabLength);
+        if (currentLineText.trim()==="") {
+            continue;
+        }
         if (tabLength>=currentTabLength){
-            console.log(currentLineText);
             break;
         } else {
-            widgetRuleLastLine++;
             widgetRule.push(currentLineText);
         }
     }
 
-    console.log(tabLength);
+    console.log(widgetRule, lineNumber);
 
-
-
-    return [widgetRule, currentEditor.document.lineAt(widgetRuleLastLine).lineNumber];
+    return widgetRule;
 }
 
-function getTabLength(text: string) {
+export function getTabLength(text: string) {
     const rawLineText = text.trim();
     const tabLength = text.length - rawLineText.length;
 

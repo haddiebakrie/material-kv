@@ -21,8 +21,14 @@ This VS Code extension adds support for Kivy and KivyMD including Syntax highlig
 ## Release Notes
 
 
-### 1.0.0
+### 0.8.0
 ### First release.
+
+### 0.9.0
+- Fixed Autocomplete quote issue.
+- Resized icon preview to fit line height.
+- Resized image preview to fit line height.
+- More bug fixing.
 
 <br>
 

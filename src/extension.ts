@@ -5,74 +5,41 @@ import * as vscode from 'vscode';
 import { addColorBox } from './color-decoration';
 import { showIconPreview } from './icon-decoration';
 import { showImagePreview } from './image-decorations';
-import { getIcon } from './mdicons';
-import {isKivyWidget} from './check-declaration';
-import { getWidgetRuleAndChildren } from './check-declaration';
-
-let iconList = getIcon();	
+import { mdIconProvider } from './mdicon-completion-provider';
+import {extractToAdvance, extractTocurrent, RefactorKivyWidget} from './refactor';
 
 // this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+
+	
+	context.subscriptions.push(
+		vscode.languages.registerCodeActionsProvider(['kv', 'python'], new RefactorKivyWidget(), {
+		}));
 	console.log('Congratulations, your extension "material-kv" is now active!');
 	let timeout: NodeJS.Timer | undefined = undefined;
 	let currentEditor = vscode.window.activeTextEditor;
+	let wsFolder = vscode.workspace.workspaceFolders;
 
-	const extractToCurrent = vscode.commands.registerCommand('material-kv.extract-to-current', function () {
-		if (!currentEditor) {
-			return;
-		}
-		const currentLine = currentEditor.selection.active.line;
-		const currentSelection = currentEditor.document.getText(
-			new vscode.Range(
-				currentEditor.selection.start,
-				currentEditor.selection.end
-			)
-		);
-		const currentLineText = currentEditor.document.lineAt(currentLine).text;
-		console.log(getWidgetRuleAndChildren(currentLineText, currentLine));
-		const widgetRule = getWidgetRuleAndChildren(currentLineText, currentLine);
-		if (!widgetRule) {
-			return;
-		}
-		let widgetEndNum = Number(widgetRule[1]);
+	let sbi = vscode.window.createStatusBarItem();
+	sbi.text = "Run Main.py";
+	sbi.command = "material-kv.run-task";
+	sbi.show();
 
-		let range = new vscode.Range(currentEditor.document.positionAt(currentLine), currentEditor.document.positionAt(widgetEndNum));
-		const select =new vscode.Selection(currentEditor.document.positionAt(currentLine), currentEditor.document.positionAt(widgetEndNum));
-		
-		currentEditor.edit((editBuilder: vscode.TextEditorEdit) => {
-			editBuilder.replace(select, 'reversed');
-		});
+	const runTask = vscode.commands.registerCommand('material-kv.run-task', function () {
+		if (wsFolder) {
+			// debugSession: interface vscode
+			// vscode.debug.startDebugging(wsFolder[0], "Launch Program");
+			let mkvConfig = vscode.workspace.getConfiguration("materialkv", null);
+			mkvConfig.update("pthonPath", "python", vscode.ConfigurationTarget.Global);
+			
+			let a = vscode.workspace.getConfiguration('materialkv', null);
+			a.update('pythonFile', "main.py");
+			vscode.commands.executeCommand('workbench.action.debug.rmmmmmmmun');			
+
+		}
 	});
-	const provider2 = vscode.languages.registerCompletionItemProvider(
-		'kv',
-		{
-			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-				const linePrefix = document.lineAt(position).text.substr(0, position.character);
-				if (!linePrefix.endsWith('icon:"') && (!linePrefix.endsWith('icon:\'')) &&
-					(!linePrefix.endsWith('icon: "')) && (!linePrefix.endsWith('icon: \''))
-				) {
-					return undefined;
-				}
-				
-				const completionList = [];
 
-				for (let i=0; i<iconList.length; i++){
-					const label = iconList[i];
-					if (!label) {
-						continue;
-					}
-					const cl = new vscode.CompletionItem(label, vscode.CompletionItemKind.Variable);
-					completionList.push(cl);
-				}
-				return completionList;
-			}
-		},
-		"\"", "\'"
-	);
-
-	context.subscriptions.push(provider2);
-
+		
 	function triggerUpdateDecorations() {
 		if (timeout) {
 			clearTimeout(timeout);
@@ -82,25 +49,28 @@ export function activate(context: vscode.ExtensionContext) {
 		timeout = setTimeout(showIconPreview, 500);
 		timeout = setTimeout(showImagePreview, 500);
 	}
-	
+
 	if (currentEditor){
 		triggerUpdateDecorations();
 	}
-	
+		
 	vscode.window.onDidChangeActiveTextEditor(editor => {
 		currentEditor = editor;
 		if (editor) {
 			triggerUpdateDecorations();
 		}
 	}, null, context.subscriptions);
-
+	
 	vscode.workspace.onDidChangeTextDocument(event => {
 		if (currentEditor && event.document === currentEditor.document) {
 			triggerUpdateDecorations();
 		}
 	}, null, context.subscriptions);
-
-		context.subscriptions.push(extractToCurrent);
+	
+	context.subscriptions.push(mdIconProvider);
+	context.subscriptions.push(extractToAdvance);
+	context.subscriptions.push(extractTocurrent);
 }
 
 export function deactivate() {}
+

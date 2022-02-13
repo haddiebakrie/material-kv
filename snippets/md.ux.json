@@ -1,0 +1,75 @@
+{
+    "Kivy MDLabel": {
+        "prefix": "MDLabel",
+        "body": [
+            "MDLabel:",
+            "\ttext: \"${1:text}\"",
+            "\t${2|color:,bold:,disabled_color:,base_direction:,disabled_outline_color:,ellipsis_option:,font_blended:,font_family:,font_hinting:,font_kerning:,font_name:,font_size:,halign:,is_shortened:,italic:,line_height:,markup:,max_lines:,mipmap:,outline_color:,outline_width:,padding:,padding_x:,padding_y:,shorten:,shorten_from:,split_str:,strikethrough:,strip:,text_language:,text_size:,texture_size:,underline:,unicode_errors:,valign|}"
+        ]
+    },
+    "Kivy Button": {
+        "prefix": "Button",
+        "body": [
+            "Button:",
+            "\ttext: \"${1:text}\"",
+            "\t${2|color:,background_color:,background_disabled_down:,background_disabled_normal:,background_down:,background_normal:,border:,bold:,disabled_color:,base_direction:,disabled_outline_color:,ellipsis_option:,font_blended:,font_family:,font_hinting:,font_kerning:,font_name:,font_size:,halign:,is_shortened:,italic:,line_height:,markup:,max_lines:,mipmap:,outline_color:,outline_width:,padding:,padding_x:,padding_y:,shorten:,shorten_from:,split_str:,strikethrough:,strip:,text_language:,text_size:,texture_size:,underline:,unicode_errors:,valign:|}"
+        ]
+    },
+    "Kivy CheckBox": {
+        "prefix": "CheckBox",
+        "body": [
+            "CheckBox:",
+            "\t${1|active:,color:,background_checkbox_disabled_down:,background_checkbox_disabled_normal:,background_checkbox_down:,background_checkbox_normal:,background_radio_disabled_down:,background_radio_disabled_normal:,background_radio_down:,background_radio_normal:|}"
+        ]
+    },
+    "Kivy Image,": {
+        "prefix": "Image",
+        "body": [
+            "Image:",
+            "\tsource: \"${1:path_to_image}\"",
+            "\t${2|allow_stretch:,anim_delay:,anim_loop:,color:,image_ratio:,keep_data:,keep_ratio:,mipmap:,nocache:|}"
+        ]
+    },
+    "Kivy Slider": {
+        "prefix": "Slider",
+        "body": [
+            "Slider:",
+            "\t${1|max:,min:,range:,sensitivity:,step:,value:,value_track:,value_track_color:,value_track_width:,padding:,orientation:,cursor_width:,cursor_image:,cursor_height:,cursor_disabled_image:,cursor_size:,border_vertical:,border_horizontal:,background_width:,background_vertical:,background_horizontal:,background_disabled_vertical:,background_disabled_horizontal:|}"
+        ]
+    },
+    "Kivy ProgressBar": {
+        "prefix": "ProgressBar",
+        "body": [
+            "ProgressBar:",
+            "\t${1|max:,value:,value_normalized:|}"
+        ]
+    },
+    "Kivy TextInput": {
+        "prefix": "TextInput",
+        "body": [
+            "TextInput:",
+            "\t${1|hint_text:,hint_text_color:,text:,auto_indent:,allow_copy:,background_active:,background_color:,background_disabled_normal:,background_normal:,base_direction:,border,cursor_blink:,cursor_color:,cursor_width:,disabled_foreground_color:,font_family:,font_name:,font_size:,foreground_color:,halign:,input_filter:,line_height:,line_spacing:,multiline:,padding:,padding_x:,padding_y:,password:,scroll_y:,scroll_x:,selection_color:,tab_width:,text_language:,use_bubble:,text_validate_unfocus:,use_handles:,write_tab|}"
+        ]
+    },
+    "Kivy ToggleButton": {
+        "prefix": "ToggleButton",
+        "body": [
+            "ToggleButton:",
+            "\t${1|color:,group:,background_color:,background_disabled_down:,background_disabled_normal:,background_down:,background_normal:,border:,bold:,disabled_color:,base_direction:,disabled_outline_color:,ellipsis_option:,font_blended:,font_family:,font_hinting:,font_kerning:,font_name:,font_size:,halign:,is_shortened:,italic:,line_height:,markup:,max_lines:,mipmap:,outline_color:,outline_width:,padding:,padding_x:,padding_y:,shorten:,shorten_from:,split_str:,strikethrough:,strip:,text_language:,text_size:,texture_size:,underline:,unicode_errors:,valign:|}"
+        ]
+    },
+    "Kivy Switch": {
+        "prefix": "Switch",
+        "body": [
+            "Switch:",
+            "\t$"
+        ]
+    },
+    "Kivy Video": {
+        "prefix": "Video",
+        "body": [
+            "Video:",
+            "\tsource: \"${1:path_to_video}\""
+        ]
+    }
+}

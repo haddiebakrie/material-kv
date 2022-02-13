@@ -5,24 +5,21 @@ const vscode = require("vscode");
 const imageRegEx = /((?:"|').*(?:"|'))/g;
 const imageDecorationType = vscode.window.createTextEditorDecorationType({});
 function showImagePreview() {
-    const currentEditor = vscode.window.activeTextEditor;
-    const allText = currentEditor === null || currentEditor === void 0 ? void 0 : currentEditor.document.getText();
     var _a;
+    const currentEditor = vscode.window.activeTextEditor;
     if (!currentEditor) {
         return;
     }
-    if (!allText) {
-        return;
-    }
+    const allText = currentEditor.document.getText();
     const imageDecoration = [];
     let match;
     while (match = imageRegEx.exec(allText)) {
         const startPos = currentEditor.document.positionAt(match.index);
         const endPos = currentEditor.document.positionAt(match.index + match[0].length);
-        const imageLineNumber = startPos.line;
-        const imageLineTextRaw = currentEditor.document.lineAt(imageLineNumber).text.replace(/\s/g, "");
+        const colorLineNumber = startPos.line;
+        const colorLineTextRaw = currentEditor.document.lineAt(colorLineNumber).text.replace(/\s/g, "");
         const image = currentEditor.document.getText(new vscode.Range(startPos, endPos)).replace(/('|")/g, "");
-        if (imageLineTextRaw.startsWith("source:") || imageLineTextRaw.startsWith("image:")) {
+        if (colorLineTextRaw.startsWith("source:") || colorLineTextRaw.startsWith("image:")) {
             const imagePath = ((_a = vscode.workspace.getWorkspaceFolder(currentEditor.document.uri)) === null || _a === void 0 ? void 0 : _a.uri.path) + "/" + image;
             const imageMarkdown = new vscode.MarkdownString([`**Image**`,
                 '',
@@ -36,7 +33,7 @@ function showImagePreview() {
                         before: {
                             contentIconPath: vscode.Uri.file(__dirname + "/../icons/md-icons/image.svg"),
                             backgroundColor: "#ffffff",
-                            height: "14px",
+                            height: "12px",
                             width: "12px",
                         },
                     },

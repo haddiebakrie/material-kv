@@ -92,5 +92,22 @@
             "if __name__==\"__main__\":",
             "\t${1:MyApp}().run()"
         ]
+    },
+    "Kivy Screen Template 2": {
+        "prefix": "md-screen-template",
+        "body": [
+            "from kivy.uix.screenmanager import Screen",
+            "from kivy.lang.builder import Builder",
+            "",
+            "Builder.load_string(\"\"\"",
+            "",
+            "<${1:MyWidget}>:",
+            "\t",
+            "\"\"\")",
+            "",
+            "class ${1:ScreenName}(Screen):",
+            "\tpass",
+            ""
+        ]
     }
 }

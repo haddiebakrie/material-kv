@@ -61,20 +61,20 @@
     "typescript": "^4.3.2",
     "vscode-test": "^1.5.2"
   },
-  "fonts": [
-    {
-      "id": "md-icons",
-      "src": [
-        {
-          "path": "./mdicons.tff",
-          "format": "woff"
-        }
-      ],
-      "weight": "normal",
-      "style": "normal"
-    }
-  ],
   "contributes": {
+    "configuration":[
+      {
+        "type": "object",
+        "title": "Run Kivy Entry",
+        "properties": {
+          "materialkv.pythonFile" : {
+            "type": "string",
+            "default": "python",
+            "description": "Application entry point"
+          }
+        }
+      }
+    ],
     "snippets": [
       {
         "language": "python",
@@ -82,11 +82,35 @@
       },
       {
         "language": "python",
+        "path": "./snippets/kivy.code.json"
+      },
+      {
+        "language": "python",
         "path": "./snippets/kivy.layout.import.json"
       },
       {
         "language": "python",
+        "path": "./snippets/kivy.layout.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/kivy.ux.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/md.code.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/md.component.json"
+      },
+      {
+        "language": "python",
         "path": "./snippets/md.layout.import.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/md.layout.json"
       },
       {
         "language": "python",
@@ -97,12 +121,8 @@
         "path": "./snippets/md.ux.import.json"
       },
       {
-        "language": "kv",
-        "path": "./snippets/kivy.ux.json"
-      },
-      {
-        "language": "kv",
-        "path": "./snippets/kivy.layout.json"
+        "language": "python",
+        "path": "./snippets/md.ux.json"
       },
       {
         "language": "kv",
@@ -110,7 +130,19 @@
       },
       {
         "language": "kv",
-        "path": "./snippets/md.layout.json"
+        "path": "./snippets/kivy.layout.import.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/kivy.layout.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/kivy.ux.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/md.code.json"
       },
       {
         "language": "kv",
@@ -118,7 +150,23 @@
       },
       {
         "language": "kv",
-        "path": "./snippets/md.code.json"
+        "path": "./snippets/md.layout.import.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/md.layout.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/md.templates.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/md.ux.import.json"
+      },
+      {
+        "language": "kv",
+        "path": "./snippets/md.ux.json"
       }
     ],
     "grammars": [
@@ -166,6 +214,27 @@
         ],
         "configuration": "./kv-language-configuration.json"
       }
-    ]
+    ],
+    "commands":[
+      {
+      "command": "material-kv.extract-to-advance",
+      "title": "Extract Widget",
+      "enablement": "resourceLangId == kv"
+      },
+      {
+        "command": "material-kv.run-task",
+        "title": "Run Main File",
+        "icon": "$(run)"
+      }
+    ],
+  
+    "menus": {
+      "editor/title/run": [
+        {
+          "when": "resourceLangId == kv",
+          "command": "material-kv.run-task"
+        }
+      ]
+    }
   }
 }

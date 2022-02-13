@@ -5,6 +5,54 @@
             "size_hint: ${1|None,1|}, ${2|None,1|}$0"
         ]
     },
+    "Widget's Size hint max": {
+        "prefix": "size_hint_max",
+        "body": [
+            "size_hint_max: ${1|None,1|}, ${2|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint min": {
+        "prefix": "size_hint_min",
+        "body": [
+            "size_hint_min: ${1|None,1|}, ${2|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint x": {
+        "prefix": "size_hint_x",
+        "body": [
+            "size_hint_x: ${1|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint y": {
+        "prefix": "size_hint_y",
+        "body": [
+            "size_hint_y: ${1|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint max x": {
+        "prefix": "size_hint_max_x",
+        "body": [
+            "size_hint_max_x: ${1|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint max y": {
+        "prefix": "size_hint_max_y",
+        "body": [
+            "size_hint_max_y: ${1|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint min x": {
+        "prefix": "size_hint_min_x",
+        "body": [
+            "size_hint_min_x: ${1|None,1|}$0"
+        ]
+    },
+    "Widget's Size hint min y": {
+        "prefix": "size_hint_min_y",
+        "body": [
+            "size_hint_min_y: ${1|None,1|}$0"
+        ]
+    },
     "BoxLayout Orientation": {
         "prefix": "orientation",
         "body": [
@@ -21,6 +69,12 @@
         "prefix": "height",
         "body": [
             "height: ${1|dp(1),dp(2),dp(3),dp(4),dp(5),dp(6),dp(7),dp(8),dp(9),dp(10),dp(20),dp(30),dp(40),dp(50)dp(60),dp(70),dp(80),dp(90),dp(100)|}$0"
+        ]
+    },
+    "Widget's Width": {
+        "prefix": "width",
+        "body": [
+            "width: ${1|dp(1),dp(2),dp(3),dp(4),dp(5),dp(6),dp(7),dp(8),dp(9),dp(10),dp(20),dp(30),dp(40),dp(50)dp(60),dp(70),dp(80),dp(90),dp(100)|}$0"
         ]
     },
     "Widget's Opacity": {
@@ -69,6 +123,12 @@
         "prefix": "center_y",
         "body": [
             "center_y: ${1|0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0|}$0"
+        ]
+    },
+    "Widget's ID": {
+        "prefix": "id",
+        "body": [
+            "id: $0"
         ]
     },
     "Kivy Dynamic Inheritance": {

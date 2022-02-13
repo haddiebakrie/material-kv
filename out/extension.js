@@ -8,54 +8,30 @@ const vscode = require("vscode");
 const color_decoration_1 = require("./color-decoration");
 const icon_decoration_1 = require("./icon-decoration");
 const image_decorations_1 = require("./image-decorations");
-const mdicons_1 = require("./mdicons");
-const check_declaration_1 = require("./check-declaration");
-let iconList = (0, mdicons_1.getIcon)();
+const mdicon_completion_provider_1 = require("./mdicon-completion-provider");
+const refactor_1 = require("./refactor");
 // this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 function activate(context) {
+    context.subscriptions.push(vscode.languages.registerCodeActionsProvider(['kv', 'python'], new refactor_1.RefactorKivyWidget(), {}));
     console.log('Congratulations, your extension "material-kv" is now active!');
     let timeout = undefined;
     let currentEditor = vscode.window.activeTextEditor;
-    const extractToCurrent = vscode.commands.registerCommand('material-kv.extract-to-current', function () {
-        if (!currentEditor) {
-            return;
+    let wsFolder = vscode.workspace.workspaceFolders;
+    let sbi = vscode.window.createStatusBarItem();
+    sbi.text = "Run Main.py";
+    sbi.command = "material-kv.run-task";
+    sbi.show();
+    const runTask = vscode.commands.registerCommand('material-kv.run-task', function () {
+        if (wsFolder) {
+            // debugSession: interface vscode
+            // vscode.debug.startDebugging(wsFolder[0], "Launch Program");
+            let mkvConfig = vscode.workspace.getConfiguration("materialkv", null);
+            mkvConfig.update("pthonPath", "python", vscode.ConfigurationTarget.Global);
+            let a = vscode.workspace.getConfiguration('materialkv', null);
+            a.update('pythonFile', "main.py");
+            vscode.commands.executeCommand('workbench.action.debug.run');
         }
-        const currentLine = currentEditor.selection.active.line;
-        const currentSelection = currentEditor.document.getText(new vscode.Range(currentEditor.selection.start, currentEditor.selection.end));
-        const currentLineText = currentEditor.document.lineAt(currentLine).text;
-        console.log((0, check_declaration_1.getWidgetRuleAndChildren)(currentLineText, currentLine));
-        const widgetRule = (0, check_declaration_1.getWidgetRuleAndChildren)(currentLineText, currentLine);
-        if (!widgetRule) {
-            return;
-        }
-        let widgetEndNum = Number(widgetRule[1]);
-        let range = new vscode.Range(currentEditor.document.positionAt(currentLine), currentEditor.document.positionAt(widgetEndNum));
-        const select = new vscode.Selection(currentEditor.document.positionAt(currentLine), currentEditor.document.positionAt(widgetEndNum));
-        currentEditor.edit((editBuilder) => {
-            editBuilder.replace(select, 'reversed');
-        });
     });
-    const provider2 = vscode.languages.registerCompletionItemProvider('kv', {
-        provideCompletionItems(document, position) {
-            const linePrefix = document.lineAt(position).text.substr(0, position.character);
-            if (!linePrefix.endsWith('icon:"') && (!linePrefix.endsWith('icon:\'')) &&
-                (!linePrefix.endsWith('icon: "')) && (!linePrefix.endsWith('icon: \''))) {
-                return undefined;
-            }
-            const completionList = [];
-            for (let i = 0; i < iconList.length; i++) {
-                const label = iconList[i];
-                if (!label) {
-                    continue;
-                }
-                const cl = new vscode.CompletionItem(label, vscode.CompletionItemKind.Variable);
-                completionList.push(cl);
-            }
-            return completionList;
-        }
-    }, "\"", "\'");
-    context.subscriptions.push(provider2);
     function triggerUpdateDecorations() {
         if (timeout) {
             (0, timers_1.clearTimeout)(timeout);
@@ -79,7 +55,9 @@ function activate(context) {
             triggerUpdateDecorations();
         }
     }, null, context.subscriptions);
-    context.subscriptions.push(extractToCurrent);
+    context.subscriptions.push(mdicon_completion_provider_1.mdIconProvider);
+    context.subscriptions.push(refactor_1.extractToAdvance);
+    context.subscriptions.push(refactor_1.extractTocurrent);
 }
 exports.activate = activate;
 function deactivate() { }

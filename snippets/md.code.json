@@ -1,10 +1,15 @@
 {
-    "All KivyMD Button classes": {
-        "prefix": "mkv-buttons",
-        "body": "${1|MDIconButton,MDFloatingActionButton,MDRaisedButton,MDFlatButton,MDRectangleFlatButton,MDRectangleFlatIconButton,MDRoundFlatButton,MDRoundFlatIconButton,MDFillRoundFlatButton,MDFillRoundFlatIconButton,MDTextButton,MDFloatingActionButtonSpeedDail|}:$0"
+    
+    "MD Widget's Background Color": {
+        "prefix": "md_bg_color",
+        "body": [
+            "md_bg_color: [$0]"
+        ]
     },
-    "All KivyMD Card": {
-        "prefix": "mkv-cards",
-        "body": "${1|MDCard,MDCardSwipe,MDCardSwipeFrontBox,MDCardSwipeLayerBox|}:$0"
+    "MD Icon" : {
+        "prefix": "icon",
+        "body": [
+            "icon: $0"
+        ]
     }
 }
